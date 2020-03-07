@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Lab 1 - Learning Three.js</title>
+  <script src="./three.js"></script>
+  <script src="./stats.min.js"></script> <!-- Shows FPS -->
+  <script src="./dat.gui.min.js"></script> <!-- UI to control properties -->
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="Stats-output"></div> <!-- div for FPS -->
+  <div id="WebGL-output"></div> <!-- div for Scene -->
+  <script>
+  var camera;
+  var scene;
+  var renderer;
+
+  /* --------------- GUI controls ----------------- */
+  // Define controls and default values
+  var controls = new function(){
+    this.rotationSpeed = 0.02;
+    this.bouncingSpeed = 0.03;
+    this.coneBouncingSpeed = 0.03;
+  }
+
+  // Add controls, define range of values
+  var gui = new dat.GUI();
+  gui.add(controls, 'rotationSpeed', 0, 0.5);
+  gui.add(controls, 'bouncingSpeed', 0, 0.5);
+  gui.add(controls, 'coneBouncingSpeed', 0, 0.5);
+
+  /* --------------- Stats (FPS) ------------------ */
+  function initStats() {
+    var stats = new Stats();
+    stats.setMode(0); // 0 = FPS. 1 = rendering time.
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0';
+    stats.domElement.style.top = '0';
+    document.getElementById("Stats-output")
+      .appendChild( stats.domElement );
+
+    return stats;
+  }
+
+  function init() {
+    var stats = initStats();
+
+    scene = new THREE.Scene(); // Container that stores and keeps track of all objects.
+
+    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000); // What we are able to see. Point of perspective.
+
+    renderer = new THREE.WebGLRenderer({antialias: true}); //Calculates wht the scene object will look like based on the camera angle. Enables antialiasing.
+
+    renderer.setClearColor(0xEEEEEEE);  // Background color of the renderer.
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.shadowMap.enabled = true; // Enables shadows.
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+    // Adds the the helper axes to the plane.
+    var axes = new THREE.AxisHelper(20);
+    scene.add(axes);
+
+    /* --------------------- Plane ------------------------ */
+    var planeGeometry = new THREE.PlaneGeometry(80, 20); // Define what the plane looks like (width, height).
+    var planeMaterial = new THREE.MeshLambertMaterial({color: 0xcccccc}); // Color, transparency. MeshLambertMaterial reacts to light sources.
+    var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+
+    // Position of the plane.
+    plane.rotation.x = -0.5 * Math.PI;
+    plane.position.x = 10;
+    plane.position.y = 0;
+    plane.position.z = 0;
+    plane.receiveShadow = true; // Sets up the plane to receive shadows casted.
+
+    scene.add(plane);
+
+    /* -------------------- Cube -------------------------- */
+    var cubeGeometry = new THREE.BoxGeometry(4, 4, 4);
+    var cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000});
+    var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+
+    cube.position.x = -4;
+    cube.position.y = 3;
+    cube.position.z = 0;
+    cube.castShadow = true; // Sets up cast shadows for the cube.
+
+    scene.add(cube);
+
+    /* -------------------- Sphere ---------------------- */
+    var sphereGeometry = new THREE.SphereGeometry(4, 20, 20);
+    var sphereMaterial = new THREE.MeshLambertMaterial({color: 0x7777ff});
+    var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+
+    sphere.position.x = 20;
+    sphere.position.y = 4;
+    sphere.position.z = 2;
+    sphere.castShadow = true; // Sets up cast shadows for the sphere.
+
+    scene.add(sphere);
+
+    /* ------------------- Cone ------------------------ */
+    var coneGeometry = new THREE.ConeGeometry(4, 10, 32);
+    var coneMaterial = new THREE.MeshLambertMaterial({color: 0x6eff33});
+    var cone = new THREE.Mesh(coneGeometry, coneMaterial);
+
+    cone.position.x = -20;
+    cone.position.y = 5;
+    cone.position.z = 2;
+    cone.castShadow = true;
+
+    scene.add(cone);
+
+    /* ---------------- Wireframe Shpere ------------- */
+    var wireSphereGeometry = new THREE.SphereGeometry(5, 8, 8);
+    var wireSphereMaterial = new THREE.MeshLambertMaterial({color: 0x7777ff, wireframe: true});
+    var wireSphere = new THREE.Mesh(wireSphereGeometry, wireSphereMaterial);
+
+    wireSphere.position.x = 0;
+    wireSphere.position.y = 20;
+    wireSphere.position.z = 0;
+    wireSphere.castShadow = true; // Sets up cast shadows for the sphere.
+
+    scene.add(wireSphere);
+
+    /* ------------------- Camera -------------------- */
+    camera.position.x = -30;
+    camera.position.y = 40;
+    camera.position.z = 30;
+    camera.lookAt(scene.position); // Point at the center of the screen.
+
+    /* ------------------- Light source -------------- */
+    var spotLight = new THREE.SpotLight( 0xffffff ); // Illuminates from its position.
+    spotLight.position.set(-40, 60, -10);
+    spotLight.castShadow = true; // Make the light source cast shadows.
+    spotLight.shadow.mapSize.width = 1024;
+    spotLight.shadow.mapSize.height = 1024;
+    scene.add(spotLight);
+
+    var step = 0;
+    var coneStep = 0;
+    function renderScene() {
+      stats.update();
+
+      step += controls.bouncingSpeed; // Make animation happen.
+      coneStep += controls.coneBouncingSpeed;
+
+      // Cube animation.
+      cube.rotation.x += controls.rotationSpeed; // rotation controled by GUI controls.
+      cube.rotation.y += controls.rotationSpeed;
+      cube.rotation.z += controls.rotationSpeed;
+
+      // Sphere animation.
+      sphere.position.x = 20 + ( 10 * (Math.cos(step)));
+      sphere.position.y = 4 + ( 10 * Math.abs(Math.sin(step)));
+
+      // Cone animation
+      cone.position.y = 5 + ( 15 * Math.abs(Math.sin(coneStep)));
+
+      requestAnimationFrame(renderScene); // Handles animation.
+      renderer.render(scene, camera);
+    }
+
+    document.getElementById("WebGL-output")
+      .appendChild(renderer.domElement);
+    renderScene();
+  };
+
+  /* ------------------- Page resizing --------------------- */
+  function onResize() {
+    camera.aspect = window.innerWidth / window.innerHeight; // update aspect ratio to the camera.
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight); // update size of the renderer.
+  }
+
+  window.onload = init;
+  window.addEventListener('resize', onResize, false); // Specify to use the onResize function.
+  </script>
+</body>
+</html>

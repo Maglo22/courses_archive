@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title>Paper toss</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" charset="UTF-8">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- JS -->
+    <script src="plugins/jquery-1.11.3.min.js"></script>
+    <script src="plugins/threeJS/three.min.js"></script>
+    <script src="plugins/threeJS/Detector.js"></script>
+    <script src="plugins/threeJS/CanvasRenderer.js"></script>
+    <script src="plugins/threeJS/Projector.js"></script>
+    <script src="plugins/threeJS/OrbitControls.js"></script>
+    <script src="plugins/objLoader/OBJLoader.js"></script>
+    <script src="plugins/keyboardState/KeyboardState.js"></script>
+    <script src="plugins/physics/physi.js"></script>
+    <script src="plugins/objLoader/MTLLoader.js"></script>
+    <script src="plugins/objLoader/DDSLoader.js"></script>
+
+    <!-- Global variables -->
+    <script type='text/javascript'>
+      var mesh, renderer, scene, mtlLoader, onProgress, ballSelection = 1, cameraSelection = 1, camera, cameraTrash, cameraTop, controls, raycaster;
+      var plane, leg, floor, wall, poster, shelfbox, deskbox, trashbottom, trashwall;
+      var percentComplete, booleanSpace;
+      // objects
+      var arrow, ironMan, desk, shelf, table, trashcan, paperball;
+      var paperSphere;
+      // score
+      var score = 0;
+      // for Physijs materials (values between 0 and 1)
+      var friction = 0.4;
+      var restitution = 0.6; // bounciness
+      // for camera controls
+      var rotSpeed = 0.01;
+      // force multiplier for the paperball
+      var multiplyScalar = 0;
+      // keyboard Input
+      var keyboard = new KeyboardState();
+    </script>
+  </head>
+  <body>
+    <div id="menu">
+      <h1>Paper Toss</h1>
+      <p>
+        Controls:<br>
+        Control de camera with the WASD keys. The ball will follow the direction of the yellow arrow.<br>
+        The shot will be as powerful as the size of the arrow.
+      </p>
+      <button id="playBtn">Play</button>
+    </div>
+
+    <div id="views">
+      <p></p>
+      <button id="normalViewBtn">Normal View</button><p></p>
+      <button id="topViewBtn">Top View</button><p></p>
+      <button id="trashViewBtn">Trash View</button>
+    </div>
+
+    <div id="balls">
+      <p></p>
+      <button id="paperBallBtn">Paper Ball</button><p></p>
+      <button id="lightBallBtn">Light Ball</button><p></p>
+      <button id="bowlingBall">Bowling Ball</button>
+    </div>
+
+    <div id="points">
+      0
+    </div>
+    <div id="canvas" style="width:600px; margin: 0 auto;">
+        <script src="js/helperFunctions.js"></script>
+        <script src="js/renderObjs.js"></script>
+        <script src="js/controls.js"></script>
+        <script src="js/main.js"></script>
+    </div>
+  </body>
+</html>
