@@ -1,0 +1,70 @@
+<main>
+  <div class="container">
+    <div class="section">
+      <h3>Añadir empleado</h3>
+      <form action="validar.php" method="POST" autocomplete="off">
+        <div class="row">
+          <div class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="nom" name ="nom" type="text" class="validate" required>
+                <label>Nombre</label>
+              </div>
+              <div class="file-field input-field col s6">
+                <div class="waves-effect waves-light btn">
+                  <span><i class="large material-icons">publish</i></span>
+                  <input type="file" id="foto" name="foto">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" placeholder="Subir foto">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="apellidoP" name ="apellidoP" type="text" class="validate" required>
+                <label>Apellido Paterno</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="apellidoM" type="text" name ="apellidoM" class="validate" required>
+                <label>Apellido Materno</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="nomU" type="text" name ="nomU" class="validate" required>
+                <label>Nombre de usuario</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="passw" type="password" name ="passw" class="validate" required>
+                <label>Contraseña</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <select required name="puesto">
+                  <option value="" disabled selected>Escoger puesto (Requerido)</option>
+                  <option value="1">Jefe</option>
+                  <option value="2">Empleado</option>
+                  <option value="3">Ayudante</option>
+                </select>
+              </div>
+              <div class="input-field col s6">
+                <select required name="dep">
+                  <option value="" disabled selected>Escoger departamento (Requerido)</option>
+                  <option value="1">Centro de Capacitación</option>
+                  <option value="2">Área de Difusión</option>
+                  <option value="3">Área de Emergéncias</option>
+                  <option value="4">Gestión de Riesgos</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <input type="submit" value="Añadir" class="waves-effect waves-light btn">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

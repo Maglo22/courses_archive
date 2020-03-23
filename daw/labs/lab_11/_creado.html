@@ -1,0 +1,40 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h5>Empleado <?=$nombre?> <?=$apellidoP?> <?=$apellidoM?> (<?=$nombreU?>), añadido con éxito.</h5>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="section">
+      <div class="row">
+        <div class="col s12">
+          <h5>¿Por qué es una buena práctica separar el controlador de la vista?</h5>
+
+          Para hacer que la mantenibilidad sea alta en el código.
+
+          <h5>Aparte de los arrelgos $_POST y $_GET, ¿qué otros arreglos están predefinidos en php y cuál es su función?</h3>
+
+          $_SERVER - Información del entorno del servidor y de su ejecución.<br>
+          $_REQUEST - Contiene el contenido de $_GET, $POST y $_COOKIE.<br>
+          $_SESSION - Contiene variables de sesión disponibles para el script actual.<br>
+          $_COOKIE - Variables pasadas al script actual a través de Cookies HTTP.
+
+          <h5>Dos funciones de PHP que no están en otro lenguaje</h5>
+
+          memory_get_peak_usage - Muestra el máximo número de bytes que se han utilizado en alguna función o script de PHP.
+          set_time_limit - Establece el límite de segundos en el que un script puede estar cargando o ejecutándose.
+
+          <h5>¿Qué es XSS y cómo se puede prevenir?</h5>
+
+          XSS es un ataque de inyección de código malicioso para su posterior ejecución que puede realizarse a sitios web,
+          aplicaciones locales o al propio navegador.<br>
+          En PHP existen funciones para evitar este tipo de ataques, como htmlspecialchars() o htmlentities(), las cuales
+          convierten los caracteres a equivalentes en HTML; de esta forma se anula la ejecución del código inyectado.<br>
+          También se puede utilizar la clase InputFilter.
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

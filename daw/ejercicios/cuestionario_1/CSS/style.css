@@ -1,0 +1,14 @@
+html{
+    font-family: "Verdana", sans-serif;
+    font-size: 1.2em;
+    color: floralwhite;
+    text-shadow: 2px 2px black;
+    background-image: url("Img/bg.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body h1, h2{
+    text-align: center;
+}

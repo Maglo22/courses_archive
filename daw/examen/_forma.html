@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="section">
+    <div class="card-panel">
+      <div class="row">
+        <h4>Registrar Zombie</h4>
+        <form class="col s12" action="guardar.php" method="POST">
+          <?php if(isset($entrada)): ?>
+          <input name="idZombie" id="idZombie" type="hidden" value="<?=$entrada["idZombie"];?>">
+          <?php endif; ?>
+          <div class="section">
+            <h5>Datos Personales</h5>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="nombre" name="nombre" type="text" class="validate" required value="<?php if(isset($entrada)) echo $entrada["nombre"] ?>">
+                <label>Nombre</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="apellidoP" name="apellidoP" type="text" class="validate" required value="<?php if(isset($entrada)) echo $entrada["apellidoP"] ?>">
+                <label>Apellido Paterno</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="apellidoM" name="apellidoM" type="text" class="validate" required value="<?php if(isset($entrada)) echo $entrada["apellidoM"] ?>">
+                <label>Apellido Materno</label>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <h5>Estado</h5>
+            <div class="row">
+              <div class="niput-field col s12">
+                <select id="estado" name="estado">
+                  <?php if(isset($entrada)): ?>
+                    <?=getDropdownEstados($entrada["idEstado"])?>
+                  <?php else: ?>
+                    <?=getDropdownEstados()?>
+                  <?php endif; ?>
+                </select>
+                <label>Estado</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <a href="index.php" class="waves-effect btn-flat left">Regresar</a>
+            </div>
+            <div class="input-field col s6">
+              <input class="waves-effect btn-flat right" type="submit" value="<?php if(isset($entrada)): ?>Guardar<?php else: ?>Registrar<?php endif;?>">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

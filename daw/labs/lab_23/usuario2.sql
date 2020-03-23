@@ -1,0 +1,3 @@
+SELECT * FROM Clientes_Banca
+
+SELECT * FROM CLIENTES_BANCA where NoCuenta='001'

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Laboratorio 1: Intro</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header><h1>Laboratorio 1</h1></header>
+        <div id="describir">
+            <h3>URL</h3>
+            
+            (Uniform Resource Locator). Dirección única de un recurso dentro del internet.
+            
+            <h3>MIME</h3>
+            
+            (Multi-Purpose Internet Mail Extensions). Extensión del protocolo e-mail que le permite a los usuarios intercambiar diferentes tipos de archivos y datos en el internet.
+            
+            <div id="metodos">
+            <h3>Métodos y códigos de errores</h3>
+            <h4>HTTP</h4>
+                <h5>Métodos</h5>
+                <ul>
+                    <li>GET</li>
+                        Adquirir recurso de servidor web.
+                    <li>HEAD</li>
+                        Sólo solicita los metadatos del recurso.
+                    <li>POST</li>
+                        Enviar información al servidor como subelemento de un recurso ya existente.
+                    <li>OPTIONS</li>
+                        Averiguar qué métodos HTTP soporta el servidor.
+                    <li>PUT</li>
+                        Cargar nuevo recurso al servidor.
+                    <li>DELETE</li>
+                        Borrar recurso.
+                    <li>TRACE</li>
+                        Monitorear mensajes entre cliente y servidor.
+                    <li>CONNECT</li>
+                        Solicitar conexión de tipo túnel TCP/IP.
+                </ul>
+                <h5>Errores</h5>
+                    <ul>
+                        <li>4XX</li>
+                            Errores de cliente. Suceden cuando la página no existe o el acceso está bloqueado.
+                        <li>5XX</li>
+                            Errores del servidor. Errores en el código de la página o dentro del propio servidor.
+                    </ul>
+            <h4>XML</h4>
+               
+            Especificación para diseñar lenguajes de marcado, que permite definir etiquetas personalizadas para descripción y organización de datos.
+                
+            <h4>XHTML</h4>
+                
+            (Extensible Hyper Text Markup Language). Casi identico a HTML, pero más estricto. Es HTML difinido por una aplicación XML.    
+                
+            <h4>HTML5</h4>
+                
+             Contiene nuevos elementos semánticos como "header", "footer"; nuevos atributos de elementos como "number", "date", "time"; nuevos elementos gráficos: "svg", "canvas"; elementos multimedia: "audio" y "video".
+                
+            <h4>JS</h4>
+                
+            JavaScript es el lenguaje utilizado para controlar el comportamiento de los documentos HTML. Puede modificar atributos, estilos, elementos, etc.<br/>
+            En JS se utiliza la palabra clave "function" para definir un bloque de código diseñado para ejecutar una tarea en particular. Las funciones pueden incluir varios parámetros.<br/>
+            function nombre(p1, p2, p3, ...){ código }.
+                
+            <h4>PHP</h4>
+                
+            Lenguaje para servidores y para crear páginas web dinámicas e interactivas.
+            PHP cuenta con varias funciones para arreglos, operaciones matemáticas, Strings, HTTP, XML, MySQLi, etc. También cuenta con funciones para definir cómo debe reaccionar la página o el servidor al encontrarse un error.
+                
+            <h4>JSP</h4>
+                
+            (Java Server Pages). Utilizado para crear aplicaciones web que vayan a ser ejecutadas en varios servidores,de múltiples plataformas. Las páginas JSP están compuestas de HTML,XML y scripts en Java.    
+                
+            <h4>Ajax</h4>
+                
+            (Asynchronous JavaScript And XML). Es una combinación de objetos XMLHttpRequest, JavaScript y HTML DOM. Permite a las páginas ser actualizadas de manera asíncrona, ya que intercambia información con el servidor detrás de cámaras. Hace posible actualizar partes de una página sin tener que refrescarla.   
+                
+            </div>
+        </div>
+        <div id="preguntas">
+            <h3>¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
+
+            El internet es una red  de redes, conecta millones de equipos entre sí, los cuales se pueden comunicar por medio de protocolos.<br/>
+            La World Wide Web es una manera de acceder a la información dentro del internet. Es un modelo de intercambio de información costruido sobre el internet. Utiliza el protocolo HTML. Es una porción del internet.
+
+            <h3>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h3>
+
+            GET: Petición de datos de un recurso específico. <br/>
+            HEAD: Igual que GET, pero sólo regresa headers HTTP, no regresa el body del documento.<br/>
+            POST: Enviar data para ser procesada por un recurso específico.<br/>
+            PUT: Sube una representación de URI específico.<br/>
+            PATCH: Aplica modificaiones parciales a un recurso.<br/>
+            DELETE: Elimina el recurso especificado.
+
+           <h3> ¿Qué método HTTP se debe utilizar al enviar un formulario HTML como el de la encuesta que constestaste al principio de la actividad? ¿Por qué?</h3>
+
+            POST, para que los datos enviados vayan de forma oculta.
+
+            <h3>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h3>
+
+            GET.
+
+           <h3> Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h3>
+
+            No, el código 200 representa una respuesta estándar para peticiones correctas.
+
+            <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3>
+            
+            Generalmente no, este error significa que la página no fué encontrada, algo que puede suceder por escribir mal la dirección por parte del usuario.
+
+            <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3>
+            
+            Sí, indica un error interno. Existe código erroneo dentro del sitio.
+            
+            <h3>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h3>
+            
+            Un atributo desaprobado es el cual ya no se recomienda su uso en los documentos HTML. Se siguen soportando para proveer compatibilidad con las versiones antiguas de HTML; sin embargo, son reemplazados por otro más actualizado.
+            Los tags como "dir", "font", "u", son desaprobados en HTML5.
+
+            <h3>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h3>
+
+            Los documentos HTML4 contienen tanto la estructura como los estilos aplicados al mismo. En HTML5 los documentos sólo contienen la estructura de la página, los estilos se configuran desde otro archivo dedicado para eso.
+
+            <h3>¿Qué componentes de estructura y estilo tiene una tabla?</h3>
+            
+            "table" - contenedor principal.<br/>
+            "tr" - filas contenedoras de las celdas.<br/>
+            "td" - representa las celdas.<br/>
+            "th" - celdas de encabezado.
+
+            <h3>¿Cuáles son los principales controles de una forma HTML5?</h3>
+            
+            "form", input", "email", "url", "date", "time", "range", "color", list", "placeholder", "autofocus", "required", "step", "min", "max", "autocomplete".
+            
+
+            <h3>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</h3>
+
+            Chrome Dev 60.0.3112.90 cuenta con 510 puntos de 555 de soporte HTML5.
+            
+        </div>
+        <div id="inv">
+            <h3>Ciclo de vida y desarrollo de los sistemas de información</h3>
+            
+            <h4>Etapas del ciclo</h4>
+            <ul>
+                <li>Planificación</li>
+                    Tareas y actividades previas al comienzo del proyecto. Entre estas están: organización de tiempos, distribución de trabajo, herramientas a utilizar, estudio de factibilidad, etc.
+                <li>Análisis</li>
+                    Aclarar cuáles son las funciones exactas que debe tener el sistema. Se descubre qué se necesita para poder plasmarlo en requerimientos del sistema.
+                <li>Análisis de riesgos</li>
+                    Evaluación de posibles riesgos a la hora de estar desarrollando el sistema y durante su implementación.
+                <li>Delimitación del ámbito del proyecto</li>
+                    Determinar lo que va a abarcar el proyecto, así como los aspectos que no forman parte de este.
+                <li>Diseño</li>
+                    Se explora cómo el sistema cumplirá con los requerimientos identificados. Es un proceso iterativo, conforme vaya avanzando el desarrollo del sistema, el diseño del mismo irá cambiando naturalmente. Se busca encontrar la mejor alternativa para la implementación de los requisitos.
+                <li>Implementación</li>
+                    Se instalan las herramientas a utilizar y se comienza con el desarrollo. Durante esta etapa es necesario documentar sobre la manera en que se está codificando, explicar cómo y porqué se realizó de esa manera.
+                <li>Pruebas</li>
+                    Todo requisito implementado debe ser probado para poder detectar cualquier error y corregirlo antes del despliegue del sistema. Las etapas de implementación y de pruebas van intercalándose hasta que se obtenga cada función implementada correctamente.
+                <li>Despliegue</li>
+                    Instalación del sistema y construcción de todos los archivos necesarios para su uso. Es recomendable desplegarla primero en sólo una sección de una empresa para hacer verificaciones de uso correcto, antes de que sea utilizada de manera general.
+                <li>Mantenimiento</li>
+                    Eliminar defectos que surjan durante la vida útil del sistema. Adaptarlo, si se requiere, cuando se tiene un sistema que opera sobre un OS y este es actualizado. Optimizar y añadir funcionalidades con actualizaciones del sistema.
+            </ul>
+            Existen varios modelos de desarrollo, cada uno con un proceso y pasos distintos, entre ellos están:
+            <p>Ciclo clásico</p>
+            <img src="Img/cicloDeVida.jpg" alt="Ciclo clásico">
+            <p>Prototipado</p>
+            <img src="Img/Prototipado.PNG" alt="Prototipado">
+            <p>Modelo en Espiral</p>
+            <img src="Img/Espiral.PNG" alt="Espiral">
+        </div>
+        <div id="referencias">
+            <h2>Referencias</h2>
+            <ul>
+                <li>Alvarez, M. (2002). Qué es JSP. [online] DesarrolloWeb.com. Disponible en: <a href="https://desarrolloweb.com/articulos/831.php" target="_blank">https://desarrolloweb.com/articulos/831.php</a> [Accedido el 12 de Agosto, 2017].</li>
+                
+                <li>Es.wikibooks.org. (2016). Métodos HTTP - Wikilibros. [online] Disponible en: <a href="https://es.wikibooks.org/wiki/Métodos_HTTP" target="_blank">https://es.wikibooks.org/wiki/Métodos_HTTP</a> [Accedido el 12 de Agosto, 2017].</li>
+                
+                <li>Garro, A. (n.d.). Elementos de formulario | HTML5. [online] Arkaitzgarro.com. Disponible en: <a href="https://www.arkaitzgarro.com/html5/capitulo-3.html" target="_blank">https://www.arkaitzgarro.com/html5/capitulo-3.html</a> [Accedido el 12 de Agosto, 2017].</li>
+                
+                <li>Guerrero, A; Blanco, M. (2015) Ciclo de Vida de un Sistema de Información. GestioPolis - Conocimiento en Negocios [online] Disponible en: <a href="https://www.gestiopolis.com/ciclo-de-vida-de-un-sistema-de-informacion/" target="_blank">https://www.gestiopolis.com/ciclo-de-vida-de-un-sistema-de-informacion/</a> [Accedido el 13 de Agosto, 2017].</li>
+                
+                <li>Informatica-hoy.com.ar. (n.d.). Que es una URL?. [online] Disponible en: <a href="http://www.informatica-hoy.com.ar/aprender-informatica/Que-es-URL.php" target="_blank">http://www.informatica-hoy.com.ar/aprender-informatica/Que-es-URL.php</a> [Accedido el 12 de Agosto, 2017].</li>
+                
+                <li>IZAMORAR. (n.d.) Ciclo de Vida de un Sistema de Información. [online] Disponible en: <a href="http://izamorar.com/ciclo-de-vida-de-un-sistema-de-informacion/" target="_blank">http://izamorar.com/ciclo-de-vida-de-un-sistema-de-informacion/</a> [Accedido el 13 de Agosto, 2017].</li>
+                
+                <li>Mundolinux.info. (n.d.). XML ¿Qué es? | Manual de XML. [online] Disponible en: <a href="http://www.mundolinux.info/que-es-xml.htm" target="_blank">http://www.mundolinux.info/que-es-xml.htm</a> [Accedido el 12 de Agosto, 2017].</li>
+                
+                <li>Rouse, M. (2005). What is MIME (Multi-Purpose Internet Mail Extensions)? - Definition from WhatIs.com. [online] SearchMicroservices. Disponible en: <a href="http://searchmicroservices.techtarget.com/definition/MIME-Multi-Purpose-Internet-Mail-Extensions" target="_blank">http://searchmicroservices.techtarget.com/definition/MIME-Multi-Purpose-Internet-Mail-Extensions</a> [Accedido el 12 de Agosto, 2017].</li>
+                
+                <li>Velasco, P. (2015). Tipos de errores HTTP y cómo resolverlos. [online] Wpdoctor.es. Disponible en: <a href="https://www.wpdoctor.es/errores-http/" target="_blank">https://www.wpdoctor.es/errores-http/</a> [Accedido el 12 de Agosto, 2017].</li>
+                
+                <li>W3schools.com. (n.d.). AJAX Introduction. [online] Disponible en: <a href="https://www.w3schools.com/xml/ajax_intro.asp" target="_blank">https://www.w3schools.com/xml/ajax_intro.asp</a> [Accedido el 12 de Agosto, 2017].</li>
+                
+                <li>W3schools.com. (n.d.). HTML5 Introduction. [online] Disponible en: <a href="https://www.w3schools.com/html/html5_intro.asp" target="_blank">https://www.w3schools.com/html/html5_intro.asp</a> [Accedido el 12 de Agosto, 2017].</li>
+                
+                <li>W3schools.com. (n.d.). HTML and XHTML. [online] Disponible en: <a href="https://www.w3schools.com/html/html_xhtml.asp" target="_blank">https://www.w3schools.com/html/html_xhtml.asp</a> [Accedido el 12 de Agosto, 2017].</li>
+                
+                <li>W3schools.com. (n.d.). PHP 5 Error Functions. [online] Disponible en: <a href="https://www.w3schools.com/php/php_ref_error.asp" target="_blank">https://www.w3schools.com/php/php_ref_error.asp</a> [Accedido el 12 de Agosto, 2017].</li>
+            </ul>
+        </div>
+        <footer>
+            <br/>Bruno Maglioni Granada A01700879<br>bruno_mg96@hotmail.com
+            <br/>
+            Editado con <a href="http://brackets.io/" target="_blank">Brackets</a>.
+        </footer>
+    </body>
+</html>

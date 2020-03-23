@@ -1,0 +1,63 @@
+<main>
+  <div class="container">
+    <div class="section">
+      <div class="card-panel">
+        <div class="row">
+          <form class="col s12" action="guardar.php" method="POST">
+            <div class="section">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="nombre" name="nombre" type="text" class="validate" required>
+                  <label>Nombre</label>
+                </div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="row">
+                <div class="niput-field col s12">
+                  <select id="rol" name="rol">
+                    <option value="" disabled selected>Escoger Rol</option>
+                    <option value="1">Hitman</option>
+                    <option value="2">Caza recompensas</option>
+                    <option value="3">Reconocimiento</option>
+                  </select>
+                  <label>Rol</label>
+                </div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="row">
+                <div class="niput-field col s12">
+                  <select id="departamento" name="departamento">
+                    <option value="" disabled selected>Escoger Departamento</option>
+                    <option value="1">Pulp</option>
+                    <option value="2">Retro</option>
+                    <option value="3">BF</option>
+                  </select>
+                  <label>Departamento</label>
+                </div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input onkeypress="sendRequest()" id="deporte" name="deporte" type="text" class="validate" required>
+                  <label>Deporte Favorito</label>
+                  <div id="ajaxResponse"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <a href="index.php" class="waves-effect btn-flat left">Regresar</a>
+              </div>
+              <div class="input-field col s6">
+                <input class="waves-effect btn-flat right" type="submit" value="Agregar">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

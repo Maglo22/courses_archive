@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Laboratorio 5: POE</title>
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body>
+        <h1>Laboratorio 5</h1>
+        <div id = "formas">
+            <form name = "valid" autocomplete = "off" onsubmit = "return validarForma()" method = "post">
+                <fieldset>
+                    <legend>Verificar contraseña:</legend>
+                    Contraseña:<br>
+                    <input type = "password" name = "password">
+                    <br>Verificar Contraseña:<br>
+                    <input type = "password" name = "Vpassword"><br><br>
+                    <input type = "submit" value ="Enviar">
+                </fieldset>
+            </form>
+        </div>
+        <div id = "venta">
+            <h2>Productos a la venta</h2>
+            <img id = "razer" src = "Img/breadwinner.jpg" alt ="Razer breadwinner">
+            <h2>$3,000</h2>
+            <div class = "Imgtext">
+                El Razer Breadwinner cuenta con la última tecnología para hacer que tu experiencia de tostado de pan sea como nunca te lo habías imaginado.<br>
+                Cuenta con el API Chroma de Razer para la posibilidad de 16.8 millones de colores de iluminación.
+            </div>
+            <br>
+            <input class = "ntext" type = "number" value = "0" min = "0">
+            <input type = "button" name = "button"  class ="botonc" value = "Agregar al carrito" onclick = "opCompra()">
+            <br>
+            <br>
+            <img id = "sanic" src = "Img/sanic.gif" alt = "Sanic">
+            <h2>$100</h2>
+            <div class = "Imgtext">
+                La mejor mascota que puedes tener. Sanic te acompañará a todas tus aventuras, siempre recordandote lo importante que es la velocidad. Cuenta con la capacidad de reproducir el Soundtrack completo de Sonic Boom.
+            </div>
+            <br>
+            <input class = "ntext" type = "number" value = "0" min = "0">
+            <input type = "button" name = "button2"  class ="botonc" value = "Agregar al carrito" onclick = "opCompra()">
+            <br>
+            <br>
+            <img src = "Img/potato.png" alt  ="Papa">
+            <br>
+            <input class = "ntext" type = "number" value = "0" min = "0">
+            <input type = "button" name = "button3"  class ="botonc" value = "Agregar al carrito" onclick = "opCompra()">
+            <h2>$999,999,999</h2>
+            <div class = "Imgtext">
+                Patata.
+            </div>
+            <h2>Carrito de compras</h2>
+            <div id = "carrito">
+                Total: 0 (iva incluido)
+            </div>
+            <input type = "button" name = "button4"  class ="botonc" value = "Pagar" onclick = "compra()">
+        </div>
+        <div id ="encuesta">
+            <h2>Encuesta</h2>
+            Resuelve la siguiente encuesta:
+            <h3>¿A qué juego pertenece la captura de pantalla?</h3>
+            <h3>1.</h3>
+            <img src = "Img/cod.jpg" alt  = "CoD">
+            <form>
+                <input type = "radio" name = "en" value = "0">Call of Duty: Modern Warfare<br>
+                <input type = "radio" name = "en" value = "0">Call of Duty: Modern Warfare 2<br>
+                <input type = "radio" name = "en" value = "0" onclick="change(this)">Call of Duty: Modern Warfare 3<br>
+            </form>
+            <h3>2.</h3>
+            <img src = "Img/fifa.jpg" alt  = "FIFA">
+            <form>
+                <input type = "radio" name = "en" value = "0">FIFA 14<br>
+                <input type = "radio" name = "en" value = "0" onclick="change(this)">FIFA 15<br>
+                <input type = "radio" name = "en" value = "0">FIFA 16<br>
+            </form>
+            <h3>3.</h3>
+            <img src = "Img/border.jpg" alt  = "Borderlands">
+            <form>
+                <input type = "radio" name = "en" value = "0">Borderlands<br>
+                <input type = "radio" name = "en" value = "0" >Borderlands 2<br>
+                <input type = "radio" name = "en" value = "0" onclick="change(this)">Borderlands The Pre-Sequel<br>
+            </form>
+            <h3>4.</h3>
+            <img src = "Img/megaman.jpg" alt  = "Megaman">
+            <form>
+                <input type = "radio" name = "en" value = "0">Megaman<br>
+                <input type = "radio" name = "en" value = "0" onclick="change(this)">Megaman 2<br>
+                <input type = "radio" name = "en" value = "0">Megaman 3<br>
+            </form>
+            <h3>5.</h3>
+            <img src = "Img/fallout.jpg" alt  = "Fallout">
+            <br>
+            <form>
+                <input type = "radio" name = "en" value = "0">Fallout<br>
+                <input type = "radio" name = "en" value = "0">Fallout 2<br>
+                <input type = "radio" name = "en" value = "0" onclick="change(this)">Fallout Tactics<br>
+            </form>
+            <h3>6.</h3>
+            <img src = "Img/deadspace.jpg" alt  = "Dead Space">
+            <form>
+                <input type = "radio" name = "en" value = "0">Deadspace<br>
+                <input type = "radio" name = "en" value = "0">Deadspace 2<br>
+                <input type = "radio" name = "en" value = "0" onclick="change(this)">Deadspace 3<br>
+            </form>
+            <h3>7.</h3>
+            <img src = "Img/sonic.jpg" alt  = "Sonic">
+            <form>
+                <input type = "radio" name = "en" value = "0" onclick="change(this)">Sonic<br>
+                <input type = "radio" name = "en" value = "0">Sonic 2<br>
+                <input type = "radio" name = "en" value = "0">Sonic 3<br>
+            </form>
+            <br>
+            <input type = "button" name = "button5"  class ="botonc" value = "Checar puntuación" onclick = "check()">
+        </div>
+        <div id = "preguntas">
+            <h3>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h3>
+            
+            Para comprobar que los datos que el usuario ingresó son válidos antes de que tenga que esperar a que estos lleguen al servidor sólo para ser rechazados.
+            
+            <h3>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript</h3>
+            
+            Mediante la desactivación de JavaScript, o ingresando datos basura.
+            
+            <h3>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</h3>
+            
+            Porque la mayoría de los usuarios no van a saltarse las validaciones.
+            
+        </div>
+        <script type="text/javascript" src="JS/script.js"></script>
+    </body>
+</html>

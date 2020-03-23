@@ -1,0 +1,68 @@
+@font-face{
+    font-family: 'pixel';
+    src: url("Font/FreePixel.ttf");
+}
+
+html{
+    background-color: black;
+}
+body{
+    font-family: 'pixel';
+    font-size: 22px;
+    text-shadow: 3px 2px black;
+    color:floralwhite;
+}
+header{
+    background-image: url("Img/flow.gif");
+    background-repeat: no-repeat;
+    background-position: left;
+}
+#metodos{
+    margin-left: 2em;
+}
+#metodos ul{
+    list-style: none;
+    margin-left: 2em;
+}
+#inv ul{
+    list-style: none;
+}
+#referencias ul{
+    list-style: none;
+    margin-left: 6em;
+}
+h5{
+    margin-left: 2em;
+}
+li{
+    font-weight: bold;
+}
+#describir{
+    background-image: url("Img/man.gif");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+#preguntas{
+    background-image: url("Img/man.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#referencias{
+    background-image: url("Img/man.gif");
+    background-position: left;
+    background-repeat: no-repeat;
+}
+footer{
+    margin-bottom: 1em;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    margin-left: 1em;
+    border: 5px solid chartreuse;
+    border-radius: 5px;
+}
+a{
+    text-decoration: none;
+    color:chartreuse;
+}

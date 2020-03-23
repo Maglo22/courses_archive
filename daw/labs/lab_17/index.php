@@ -1,0 +1,10 @@
+<?php
+  //session_start();
+  require_once("util.php");
+  include("_header.html");
+  include("_main_view_head.html");
+  echo getEmpleados();
+  include("_button.html");
+  include("_preguntas.html");
+  include("_footer.html");
+?>

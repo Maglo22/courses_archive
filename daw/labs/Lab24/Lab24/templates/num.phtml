@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <?php if (isset($num)) : ?>
+          <h4>Resultado:</h4>
+          <p><?= findPrimes($num); ?></p>
+      <?php else: ?>
+          <h4>No se introdujo un número.</h4>
+      <?php endif; ?>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <a href="index.php" class="btn waves-effect waves-light">Regresar</a>
+    </div>
+  </div>
+</div>
+<?php
+  function findPrimes($num){
+    $html = "";
+    if (is_numeric($num)){
+      for( $j = 2; $j <= $num; $j++ ){
+        for( $k = 2; $k < $j; $k++ ){
+          if( $j % $k == 0 ){
+            break;
+          }
+        }
+        if( $k == $j )
+          $html .= "Número primo: ".$j. "<br>";
+      }
+    }
+    else{
+      $html .= "Se introdujeron caracteres no numéricos.";
+    }
+    return $html;
+  }
+ ?>

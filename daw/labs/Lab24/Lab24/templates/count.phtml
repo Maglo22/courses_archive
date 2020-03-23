@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <?php if (isset($str)) : ?>
+          <h5>Texto:</h5>
+          <p><?= $str ?></p>
+          <h5>Número de palabras: <?= str_word_count($str); ?>.</h5>
+      <?php else: ?>
+          <h5>Número de palabras: 0.</h5>
+      <?php endif; ?>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <a href="index.php" class="btn waves-effect waves-light">Regresar</a>
+    </div>
+  </div>
+</div>

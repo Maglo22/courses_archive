@@ -1,0 +1,46 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col s2">
+        <img class="responsive-img" src="<?=$_SESSION["foto"]?>" alt="(Foto)">
+      </div>
+      <div class="col s10">
+        <h5>Empleado <?=$_SESSION["user"]?> <?=$_SESSION["apellidoP"]?> <?=$_SESSION["apellidoM"]?> (<?=$_SESSION["nomU"]?>), añadido con éxito.</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <a class="waves-effect waves-light btn" href="cerrar.php"><i class="material-icons left">arrow_back</i>Regresar</a>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="section">
+      <div class="row">
+        <div class="col s12">
+          <h5>¿Por qué es importante hacer un session_unset() y luego un session_destroy()?</h5>
+
+          Si no se realiza el session_unset(), las variables globales continuan guardando los valores de la sesión.<br>
+          session_destroy(), aunque destruye todos los datos asociados a la sesión actual, no limpia las variables.
+
+          <h5>¿Cuál es la diferencia entre una variable de sesión y una cookie?</h3>
+
+          Las variables de sesión se guardan en el servidor, mientras que las cookies lo hacen de manera local en el dispositivo
+          que se haya utilizado para entrar a la página.
+
+          <h5>¿Qué técnicas se utilizan en sitios como Facebook para que el usuario no sobreescriba sus fotos
+          en el sistema de archivos cuando sube una foto con el mismo nombre?</h5>
+
+          Los archivos se renombran al llegar al servidor en base a distintos factores, como puede ser un ID o una combinación de la
+          fecha y el nombre del archivo.
+
+          <h5>¿Qué es CSRF y cómo puede prevenirse?</h5>
+
+          Un tipo de ataque en el que un usuario autenticado en la aplicación web es forzado a ejecutar comandos no deseados.<br>
+          Algunas recomendaciones para evitarlo son utilizar CSRF tokens, verificar que los headers de solicitud sean del mismo origen,
+           doble envio de cookie, etc.
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

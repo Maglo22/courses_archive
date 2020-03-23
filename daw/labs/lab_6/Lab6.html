@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 6: Documentos Dinámicos</title>
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body onload="setTimeout(cambiarLetra, 5000);">
+        <h1>Laboratorio 6</h1>
+        <div id="watermark">
+            <img src="CSS/Img/Outsidermark.png">
+        </div>
+        <div id="forma">
+            <h2>Forma con ayuda dinámica</h2>
+            <form name = "forma">
+                <label>Nombre</label><br>
+                <input type = "text" name = "text1" id="nombre">
+                <span id="text1">Introduce tu primer nombre</span>
+                <br>
+                <label>Apellido</label><br>
+                <input type = "text" name = "text2" id="apellido">
+                <span id="text2">Introduce tu primer apellido</span>
+            </form>
+        </div>
+        <div id="timers">
+            <h2>Timers de JavaScript</h2>
+            <h3>setTimeout</h3>
+            <input type="button" name="vclock" value="Ocultar reloj" onclick="setTimeout(oreloj, 1000);">
+            <input type="button" name="vclock2" value="Visualizar reloj" onclick="setTimeout(vreloj, 1000);">
+            <br><br>(Tiempo de respuesta: 1 segundo).
+            <h3>setInterval</h3>
+            
+            Crear un reloj:
+            
+            <p id="clock"></p>
+        </div>
+        <div id="drag">
+            <h2>Drag and Drop</h2>
+            <div id="half1" ondrop="drop(event)" ondragover="permitDrop(event)">
+                <img src="CSS/Img/mask.png" id="drag1" draggeable="true" ondragstart="drag(event)">
+            </div>
+            <div id="half2" ondrop="drop(event)" ondragover="permitDrop(event)">
+            </div>
+        </div>
+        <h3 id="prehead">Las preguntas cambiarán su estilo de letra 5 segundos después de que se cargue la página.</h3>
+        <div id="preguntas" onload="cambiarLetra()">
+            <h3>¿Cuáles son las diferencias entre los posibles valores de la propiedad position?</h3>
+            
+            <ul>
+                <li>static - Valor por defecto. Los elementos son desplegados en el orden en que aparecen en el documento.</li>
+                <li>absolute - El elemento es posicionado relativamente a su primer elemento ancestro.</li>
+                <li> fixed - El elemento es posicionado relativamente a la ventana del navegador.</li>
+                <li>relative - El elemento es posicionado relativamente a su poscición normal.</li>
+                <li>initial - Define esta propiedad con el valor por defecto.</li>
+                <li>inherit - Hereda el valor de la propiedad de su elemento padre.</li>
+            </ul>
+            
+            <h3>¿Cuáles son los valores estándar para la propiedad visibility?</h3>
+            
+            <ul>
+                <li>visible - Valor por defecto. El elemento es visible.</li>
+                <li>hidden - El elemento es invisible, pero sigue ocupando su espacio designado.</li>
+                <li>collapse - Sólo para elementos de tabla. Elimina una fila o columna, pero no afecta el diseño de la tabla. El espacio de dicha fila o columna estará disponible para otro contenido.</li>
+            </ul>
+            
+            <h3>¿Qué es el zIndex y para qué sirve?</h3>
+            
+            Propiedad que especifica el orden de pila de un elemento. Un elemento con un valor de pila mayor siempre está enfrente de otro con un valor menor de pila.
+            
+        </div>
+        <div id="fuentes">
+            <h2>Fuentes</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/css/css_font.asp" target="_blank">https://www.w3schools.com/css/css_font.asp</a></li>
+                <li><a href="" target="_blank"></a></li>
+                <li><a href="https://www.w3schools.com/jsref/prop_style_font.asp" target="_blank">https://www.w3schools.com/jsref/prop_style_font.asp</a></li>
+                <li><a href="https://www.w3schools.com/html/html5_draganddrop.asp" target="_blank">https://www.w3schools.com/html/html5_draganddrop.asp</a></li>
+                <li><a href="https://www.w3schools.com/cssref/pr_class_position.asp" target="_blank">https://www.w3schools.com/cssref/pr_class_position.asp</a></li>
+                <li><a href="https://www.w3schools.com/cssref/pr_class_visibility.asp" target="_blank">https://www.w3schools.com/cssref/pr_class_visibility.asp</a></li>
+                <li><a href="https://www.w3schools.com/cssref/pr_pos_z-index.asp" target="_blank">https://www.w3schools.com/cssref/pr_pos_z-index.asp</a></li>
+                <li><a href="https://www.w3schools.com/js/js_timing.asp" target="_blank">https://www.w3schools.com/js/js_timing.asp</a></li>
+            </ul>
+        </div>
+    <script type="text/javascript" src="JS/script.js"></script>
+    </body>
+</html>
